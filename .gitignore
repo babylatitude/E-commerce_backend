@@ -1,0 +1,50 @@
+# Bytecode
+*.py[cod]
+__pycache__/
+
+# DB
+*.sqlite3
+*.db
+
+# Env
+.env
+.env.*
+
+# Logs
+*.log
+
+# Django static/media
+/static/
+/media/
+
+# Virtualenv
+venv/
+.venv/
+
+# System
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+docker-compose.override.yml
+docker-compose*.env
+.docker/
+build/
+**/Dockerfile.dev
+**/Dockerfile.local
+
+# Test & coverage
+htmlcov/
+.pytest_cache/
+.coverage
+
+# Celery
+celerybeat-schedule
+
+schema.yml

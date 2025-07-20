@@ -1,0 +1,110 @@
+GET http://127.0.0.1:8000/products/ HTTP/1.1
+
+###
+
+GET http://127.0.0.1:8000/products/2/ HTTP/1.1
+
+###
+
+DELETE http://127.0.0.1:8000/products/1/ HTTP/1.1
+
+###
+
+PUT http://127.0.0.1:8000/products/2/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTQzOTY3LCJpYXQiOjE3NTI1NDM2NjcsImp0aSI6IjYwODE0ZjFkOTI0MTRmOTBhYjI2ZTg4OTJhZGMyYTVhIiwidXNlcl9pZCI6MX0.fnRjGq1x4McSPMJTRKAO0oZP5zc6ds3nR3uDzYTaTqk
+
+{
+    "name":"Television",
+    "price":300.00,
+    "stock":15,
+    "description":"Oled television is the best"
+}
+
+
+
+###
+
+POST http://127.0.0.1:8000/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTM5MzY5LCJpYXQiOjE3NTI1MzkwNjksImp0aSI6IjQ2YWI3NjllNTY4ZTRjMzc5NWE0NGY1YWI0ZTI3YmZmIiwidXNlcl9pZCI6MX0.VXErn6oTZbV6JRmLMldKGOmGNu6iYI_vh0DPXL0yLj0
+
+
+{
+    "name":"Television",
+    "price":300.00,
+    "stock":15,
+    "description":"Oled television is the best"
+}
+
+###
+
+POST http://127.0.0.1:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"banuser",
+    "password":"banuser"
+}
+
+###
+GET http://127.0.0.1:8000/user-orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTM5MzY5LCJpYXQiOjE3NTI1MzkwNjksImp0aSI6IjQ2YWI3NjllNTY4ZTRjMzc5NWE0NGY1YWI0ZTI3YmZmIiwidXNlcl9pZCI6MX0.VXErn6oTZbV6JRmLMldKGOmGNu6iYI_vh0DPXL0yLj0
+
+###
+POST http://127.0.0.1:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+   "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MjYyNzgyMSwiaWF0IjoxNzUyNTQxNDIxLCJqdGkiOiIyN2Y5YzI3MmZhODU0OWFjYTdjNzhjODA5MjJhZmUyMCIsInVzZXJfaWQiOjF9.l619Fn9ASzCPNeGBicRP-7FTYa0z9_h2KAFedzL7QF4"
+}
+
+###
+
+GET http://127.0.0.1:8000/orders/6e404c7e-567b-477c-9b3c-dc0f429c9973 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyODc4OTUyLCJpYXQiOjE3NTI4Nzg2NTIsImp0aSI6IjlhNjhmZDBkZmE3ZTRmMTNhZTU4N2FhNGI2MTgyN2NkIiwidXNlcl9pZCI6MX0.S7131o_izfj-E_2XNfdK9d3ijXI6WGfFJy8gg5JkLpM
+
+###
+POST http://127.0.0.1:8000/orders/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyOTgzNDMwLCJpYXQiOjE3NTI5ODMxMzAsImp0aSI6ImZkOThiNjg2NWIwYzRlOTFhNGUxOWZmNDFmZDA4NmIzIiwidXNlcl9pZCI6NH0.HOwENzYf8lEXucr9aJ963sCl5tlxb--QMEL4yXTL02c
+
+{
+	"status": "Pending",
+	"items": [
+		{
+				"product": 2,
+				"quantity": 2
+		},
+		{
+				"product": 3,
+				"quantity": 1
+		}
+	]	
+}
+
+###
+PUT http://127.0.0.1:8000/orders/cba452a8-5dd6-4a48-9727-ebcf12e94b2f/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyODgyNjMxLCJpYXQiOjE3NTI4ODIzMzEsImp0aSI6IjhjNzI0NmQ0MGE4ZjRmNWY4ZWU2NjQ5NDMwNDMwNjM0IiwidXNlcl9pZCI6MX0.1ivdV-vkG0eZ_9uoYXiz90SCFDLRl03scp45ymaBfcE
+
+{
+	"status": "Pending",
+    "items": [
+		{
+				"product": 2,
+				"quantity": 3
+		},
+		{
+				"product": 3,
+				"quantity": 1
+		}
+	]	
+}
+###
+GET http://127.0.0.1:8000/orders/cba452a8-5dd6-4a48-9727-ebcf12e94b2f/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyODgwMjM0LCJpYXQiOjE3NTI4Nzk5MzQsImp0aSI6IjZmZGQyYjNkZTAzNDRkZThiYzY4MGViNTMyNDY1NWUyIiwidXNlcl9pZCI6MX0.FuB82PfNYIMF_y8KJWO_85mb10fPHGsxQaojsuU6f_o
+
+###
+GET  http://127.0.0.1:8000/orders/cba452a8-5dd6-4a48-9727-ebcf12e94b2f/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyODgzMDMxLCJpYXQiOjE3NTI4ODI3MzEsImp0aSI6ImYyYTQyMmRjNjk3NTRhMjQ4YjY1NGE0YjZmMzVlYzc5IiwidXNlcl9pZCI6MX0.ADrTzf6T-6IMOMGStUsk28Bwj1yCcKvWvXv5LqvaNq8
